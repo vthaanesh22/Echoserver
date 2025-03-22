@@ -21,6 +21,7 @@ Testing the server and client
 
 ## PROGRAM:
 Server :
+```
 import socket
 HOST, PORT = '127.0.0.1', 65432
 with socket.create_server((HOST, PORT)) as s:
@@ -29,24 +30,25 @@ with socket.create_server((HOST, PORT)) as s:
         print(f'Connected by {addr}')
         while data := conn.recv(1024):
             conn.sendall(data)
-
+```
 client:
+```
 import socket
 HOST, PORT = '127.0.0.1', 65432
 with socket.create_connection((HOST, PORT)) as s:
     s.sendall(b'Rakshitha P, 212223220083')
     print(f'Received: {s.recv(1024)!r}')
-
+```
 ## OUTPUT:
 
 server:
+![Screenshot 2025-03-22 085222](https://github.com/user-attachments/assets/8390001c-be97-438f-a8ab-124803a025c5)
 
-![server](https://github.com/user-attachments/assets/d1662266-77ee-4f7f-8fea-8afda42e16ef)
 
 client:
 
 
-![client](https://github.com/user-attachments/assets/4d39eea7-b4f2-40db-ae34-b8097f50a965)
+![image](https://github.com/user-attachments/assets/7fa272b9-2434-4f20-9d26-d9072ef56b1d)
 
 
 ## RESULT:
